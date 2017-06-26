@@ -1,2 +1,89 @@
+@font-face {
+    font-family: Lobster;
+    src: url("Lobster_1_4.otf");
+}
+
 body {
-  background-color: pink; }
+    font-family: 'Open Sans', sans-serif;
+    color: #4e525d;
+}
+
+header {
+    line-height: 100px;
+}
+
+.container {
+    width: 1170px;
+}
+
+.container:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.col-2, .col-3, .col-4 {
+    float: left;
+}
+
+.col-2:last-child, .col-3:last-child, .col-4:last-child {
+    float: right;
+}
+
+.col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: 50%;
+}
+
+.col-3 {
+    width: 33.33333%;
+}
+
+.col-4 {
+    width: 25%;
+}
+
+.logo {
+    font-family: Lobster;
+    font-size: 43px;
+    color: #44c0c2;
+}
+
+.menu {
+    text-align: right;
+}
+
+.main-menu {
+    list-style: none;
+}
+
+.main-menu li {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.main-menu a {
+    display: block;
+    font-size: 15px;
+    color: #4e525d;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.main-menu .active, .main-menu a:hover, .main-menu a:active {
+    background: #f8f9fb;
+    color: #44c0c2;
+    border-bottom: 2px solid #44c0c2;
+}
+
+.swiper-container {
+    width: 1440px;
+    height: 565px;
+}

@@ -1,2 +1,80 @@
+$text-color: #4e525d
+$turquoise: #44c0c2
+
+@mixin column($width)
+    width: 100%/$width
+
+@font-face 
+    font-family: Lobster 
+    src: url('Lobster_1_4.otf')
+   
 body
-    background-color: pink
+    font-family: 'Open Sans', sans-serif
+    color: $text-color
+    
+header
+    line-height: 100px
+
+.container
+    width: 1170px
+    
+    &:after
+        display: table
+        content: ""
+        clear: both
+
+.container
+    margin: 0 auto
+    
+.col-2,.col-3,.col-4
+    float: left
+    
+    &:last-child
+        float: right
+
+.col-1
+    width: 100%;
+    
+.col-2
+    @include column(2)
+       
+.col-3
+    @include column(3)
+    
+.col-4
+    @include column(4)
+
+
+.logo
+    font-family: Lobster
+    font-size: 43px
+    color: $turquoise
+    
+.menu
+    text-align: right
+
+.main-menu
+    list-style: none
+    
+    li 
+        display: inline-block
+        white-space: nowrap
+    a
+        display: block
+        font-size: 15px
+        color: $text-color
+        text-decoration: none
+        padding: 0 20px
+        
+    .active, a:hover, a:active 
+            background: #f8f9fb
+            color: $turquoise
+            border-bottom: 2px solid $turquoise  
+        
+.swiper-container
+    width: 1440px
+    height: 565px
+
+
+    
+            
