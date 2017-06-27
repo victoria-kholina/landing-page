@@ -13,38 +13,177 @@
         <script src="js/main.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo col-2"><h1>Author</h1></div>
-            <div class="menu col-2">
-               <ul class="main-menu">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </header>
-    </div>
-      <div class="swiper-container">
-       <div class="swiper-wrapper">
-           
-            <div class="swiper-slide"><img src="img/slide1.jpg" alt="">slide 1</div>
-            <div class="swiper-slide"><img src="img/slide1.jpg" alt="">slide 2</div>
-            
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="text-slider">
-                <h1></h1>
-                <h3></h3>
-                <button class="slider-btn"></button>
-            </div>
-            
+    
+    <header>
+       <div class="container">
+        <div class="logo col-2"><h1>Author</h1></div>
+        <div class="menu col-2">
+           <ul class="main-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#service">Portfolio</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#team">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+           <div class="swiper-slide"><img src="img/slide1.jpg" alt="" />slide 1</div>
+            <div class="swiper-slide"><img src="img/slide1.jpg" alt="" />slide 2</div>
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <div class="text-slider">
+            <h1>This is a main heading</h1>
+            <h3>Lorem Ipsum is simply dummy text of the printing</h3>
+            <button class="slider-btn">Learn More</button>
         </div>
     </div>
-        
+         
+    <section class="team" id="team">
+        <div class="container">
+            <h1>The Team</h1>
+            <div class="col-4">
+                <img src="img/team.jpg" alt="">
+                <h2>Adrian Thomas</h2>
+                <h4>CEO & Founder</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+            </div>
+            <div class="col-4">
+                <img src="img/team.jpg" alt="">
+                <h2>Narate Ketram</h2>
+                <h4>Creative Director</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+            </div>
+            <div class="col-4">
+                <img src="img/team.jpg" alt="">
+                <h2>Fernando Comet</h2>
+                <h4>CEO & Founder</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+            </div>
+            <div class="col-4">
+                <img src="img/team.jpg" alt="">
+                <h2>Adedayo saheed</h2>
+                <h4>Creative Director</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+            </div>
+        </div>
+    </section>
+      
+    <section class="prices" id="service">
+        <div class="container">
+            <div class="col-3">
+                <table>
+                    <thead>
+                        <tr><td><h1>Basic</h1></td></tr>
+                        <tr><td><h2>$5.01/ Month</h2></td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lorem ipsum </td></tr>
+                        <tr><td>Dolor sit amet, consect</td></tr>
+                        <tr><td>Adipiscing elit</td></tr>
+                        <tr><td>Proin commodo turpis</td></tr>
+                        <tr><td>lacus pulvinarvel </td></tr>
+                        <tr><td>Prnare nisi pretium.</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><button type="button" class="buy-now-btn" id="basic-package">Buy now</button></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                </div>
+                
+            <div class="col-3">
+               <table>
+                    <thead>
+                        <tr><td><h1>Pro</h1></td></tr>
+                        <tr><td><h2>$10.01/ Month</h2></td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lorem ipsum </td></tr>
+                        <tr><td>Dolor sit amet, consect</td></tr>
+                        <tr><td>Adipiscing elit</td></tr>
+                        <tr><td>Proin commodo turpis</td></tr>
+                        <tr><td>lacus pulvinarvel </td></tr>
+                        <tr><td>Prnare nisi pretium.</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><button type="button" class="buy-now-btn" id="pro-package">Buy now</button></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                </div>
+                
+            <div class="col-3">
+               <table>
+                    <thead>
+                        <tr><td><h1>Premium</h1></td></tr>
+                        <tr><td><h2>$20.01/ Month</h2></td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lorem ipsum </td></tr>
+                        <tr><td>Dolor sit amet, consect</td></tr>
+                        <tr><td>Adipiscing elit</td></tr>
+                        <tr><td>Proin commodo turpis</td></tr>
+                        <tr><td>lacus pulvinarvel </td></tr>
+                        <tr><td>Prnare nisi pretium.</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><button type="button" class="buy-now-btn" id="premium-package">Buy now</button></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                </div>
+        </div>
+    </section>       
   
+      <footer id="contact">
+          <div class="container">
+              <h1>Contact us</h1>
+              <div class="col-2">
+                  <h2>Get in touch with us</h2>
+                  <p class="footer-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
+                  <div class="social-icons">
+                      <a href="http://www.facebook.com/" target="_blank"><span class="icon icon-fb"></span></a>
+                      <a href="http://twitter.com/" target="_blank"><span class="icon icon-tw"></span></a>
+                      <a href="http://www.google.com/intl/ru/gmail/about/" target="_blank"><span class="icon icon-gmail"></span></a>
+                  </div>
+                  <div class="contacts">
+                      <p>Posted by Dospel & GanjaParker</p>
+                      <p>+XX-XXXX - XXXX - XX</p>
+                      <p>info@mail.com</p>
+                  </div>
+              </div>
+              <div class="col-2">
+                  <form action="" method="post" role="form" novalidate>
+                      <div class="row">
+                       <div class="col-2">
+                        <input type="text" class="footer-form" placeholder="Name" required>
+<!--                        <span class="help-block"></span>-->
+                       </div>
+                       <div class="col-2">
+                        <input type="email" class="footer-form" placeholder="Email" required>
+<!--                        <span class="help-block"></span>-->
+                      </div>
+                      </div>
+                       <div class="col-1">
+                        <textarea class="footer-form" rows="8" placeholder="Message" required></textarea>
+<!--                        <span class="help-block"></span>-->
+                      </div>
+
+                    <button type="submit" class="footer-btn">SEND</button>
+                </form>
+              </div>
+          </div>
+      </footer>
 </body>
 </html>
