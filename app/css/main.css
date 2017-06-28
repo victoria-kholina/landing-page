@@ -1,6 +1,8 @@
+@charset "UTF-8";
+
 @font-face {
     font-family: Lobster;
-    src: url("Lobster_1_4.otf");
+  src: url("Lobster_1_4.otf");
 }
 
 body {
@@ -37,7 +39,20 @@ p, h4 {
 }
 
 .col-2 {
-    width: 50%;
+    width: 48%;
+}
+
+.col-2:last-child {
+    float: right;
+}
+
+.col-3 {
+    width: 368px;
+    margin-right: 33px;
+}
+
+.col-3:last-child {
+    margin-right: 0;
 }
 
 .col-4 {
@@ -57,6 +72,11 @@ header {
     border-bottom: 1px solid #fff;
 }
 
+.btn-turquoise {
+    background: #44c0c2;
+    border: 1px solid #44c0c2;
+}
+
 .logo {
     font-family: Lobster;
     font-size: 43px;
@@ -71,11 +91,6 @@ header {
     list-style: none;
 }
 
-.main-menu li {
-    display: inline-block;
-    white-space: nowrap;
-}
-
 .main-menu a {
     display: block;
     font-size: 15px;
@@ -88,6 +103,58 @@ header {
     background: #f8f9fb;
     color: #44c0c2;
     border-bottom: 2px solid #44c0c2;
+}
+
+.horizontal-menu li {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.vertical-menu li {
+    display: block;
+    white-space: nowrap;
+}
+
+.vertical-menu {
+    width: 50%;
+    float: right;
+    line-height: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.vertical-menu a:hover {
+    border-bottom: 1px solid #44c0c2;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+header .btn-turquoise {
+    padding: 10px 15px;
+    margin-right: 20px;
+}
+
+header .btn-turquoise span {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.closed:after {
+    content: "▼";
+}
+
+.opened:after {
+    content: "▲";
+}
+
+.closed:after, .opened:after {
+    margin-left: 5px;
 }
 
 .swiper-container, .prices, footer {
@@ -161,21 +228,9 @@ button:focus, .footer-form:focus {
     -webkit-box-shadow-box-shadow: none;
 }
 
-.buy-now-btn {
-    background: #788492;
-    padding: 10px 50px;
-    font-size: 17px;
-    font-weight: 600;
-    border: 1px solid #788492;
-}
-
-.buy-now-btn:hover {
-    background: #44c0c2;
-    border: 1px solid #44c0c2;
-}
-
 .team h1, footer h1 {
     font-size: 42px;
+    margin-bottom: 100px;
 }
 
 .team, .prices, footer {
@@ -185,11 +240,8 @@ button:focus, .footer-form:focus {
 
 .team img {
     border-radius: 50%;
-    margin: 60px 0;
-}
-
-.team h1 {
-    margin-bottom: 70px;
+    margin: 30px 0 60px 0;
+    width: 90%;
 }
 
 .team h2 {
@@ -203,15 +255,6 @@ button:focus, .footer-form:focus {
 
 .prices {
     background: #f1f1f1;
-}
-
-.col-3 {
-    width: 368px;
-    margin-right: 33px;
-}
-
-.col-3:last-child {
-    margin-right: 0;
 }
 
 .col-3 table {
@@ -253,6 +296,19 @@ button:focus, .footer-form:focus {
     border-bottom: 1px solid #f1f1f1;
 }
 
+.buy-now-btn {
+    background: #788492;
+    padding: 10px 50px;
+    font-size: 17px;
+    font-weight: 600;
+    border: 1px solid #788492;
+}
+
+.buy-now-btn:hover {
+    background: #44c0c2;
+    border: 1px solid #44c0c2;
+}
+
 footer {
     background-image: url("../img/footer.jpg");
     color: #fff;
@@ -266,10 +322,6 @@ footer .col-2:last-child {
     text-align: right;
 }
 
-footer h1 {
-    margin-bottom: 100px;
-}
-
 footer h2 {
     font-size: 24px;
 }
@@ -278,18 +330,9 @@ footer form {
     margin-left: 15px;
 }
 
-form .col-2 {
-    width: 48%;
-}
-
-form .col-2:last-child {
-    float: right;
-}
-
-.footer-btn {
-    background: #44c0c2;
-    border: 1px solid #44c0c2;
+footer .btn-turquoise {
     padding: 10px 50px;
+    font-size: 16px;
 }
 
 textarea, input {
@@ -358,4 +401,167 @@ textarea {
 
 .icon-gmail {
     background-position: -116px -50px;
+}
+
+@media screen and (min-width: 0\0) {
+    .buy-now-btn, header .btn-turquoise {
+        line-height: 20px;
+    }
+}
+
+@media only screen and (max-width: 1460px) {
+    .swiper-container, .prices, footer {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    .container {
+        width: 100%;
+    }
+
+    .logo h1 {
+        margin-left: 20px;
+    }
+
+    .footer-main {
+        padding: 0 20px;
+    }
+
+    .text-slider {
+        width: 70%;
+        margin-left: -35%;
+    }
+
+    .col-3 {
+        width: 30%;
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 1170px) {
+    header .col-2:first-child {
+        width: 20%;
+    }
+
+    header .col-2:last-child {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .col-3 {
+        margin: 15px;
+    }
+
+    header {
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .swiper-container {
+        margin-top: 70px;
+        height: 350px;
+    }
+
+    .text-slider {
+        top: 60px;
+    }
+
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        right: 20px;
+    }
+
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        left: 20px;
+    }
+
+    .text-slider h1 {
+        font-size: 42px;
+    }
+
+    .text-slider h3 {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .text-slider button {
+        font-size: 18px;
+        margin: 20px 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .col-4 {
+        width: 50%;
+    }
+
+    .team img {
+        width: 70%;
+    }
+
+    .col-3 {
+        margin: 10px;
+    }
+
+    .buy-now-btn {
+        padding: 10px 20px;
+    }
+
+    .team, .prices, footer {
+        padding: 50px 0;
+    }
+
+    .team h1, footer h1 {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .text-slider {
+        top: 30px;
+        width: 100%;
+        margin-left: -50%;
+    }
+
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev, .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        background: none;
+    }
+
+    .col-3 {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .buy-now-btn {
+        padding: 10px 50px;
+    }
+
+    footer .col-2 {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    footer .col-2 {
+        text-align: center;
+    }
+
+    .footer-desc, .social-icons {
+        padding: 15px 0;
+    }
+
+    .team h1, footer h1 {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .col-4 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .team img {
+        margin: 20px 0;
+    }
 }

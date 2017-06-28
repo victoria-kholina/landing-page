@@ -1,5 +1,8 @@
 jQuery(document).ready(function(){
     
+    $(window).resize(getDropdown); 
+    getDropdown();  
+    
     var mySwiper = new Swiper ('.swiper-container', {
         loop: false,
       pagination: '.swiper-pagination',
@@ -33,6 +36,26 @@ jQuery(document).ready(function(){
         $("body,html").animate({scrollTop: elemPos }, 800);
         return false;
       });
+    
+    function getDropdown(){
+        var divMenu = $('.mobile-menu');
+        var winWidth = $(window).width();
+        if (winWidth<768){ 
+            if(divMenu.hasClass("hidden")){
+                divMenu.removeClass("hidden").addClass("visible");
+                $(".main-menu").removeClass("horizontal-menu").addClass("vertical-menu").hide();
+                $(".mobile-menu button").on("click", function(){
+                    $(".main-menu").slideToggle();
+                    divMenu.find("span").toggleClass("closed opened");
+                    });      
+            };
+        } else {
+            if($(".main-menu").hasClass("vertical-menu") || divMenu.hasClass("visible")){
+                $(".main-menu").removeClass("vertical-menu").addClass("horizontal-menu").show();
+                divMenu.removeClass("visible").addClass("hidden");
+            }
+        };
+    };
 
 });//end jQuery
                     

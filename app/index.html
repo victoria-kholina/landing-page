@@ -13,12 +13,15 @@
         <script src="js/main.js"></script>
 </head>
 <body>
-    
+
+<!--    HEADER   -->
+   
     <header>
        <div class="container">
         <div class="logo col-2"><h1>Author</h1></div>
         <div class="menu col-2">
-           <ul class="main-menu">
+            <div class="mobile-menu hidden"><button class="btn-turquoise"><span class="closed">MENU</span></button></div>
+           <ul class="main-menu horizontal-menu">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#service">Service</a></li>
                 <li><a href="#service">Portfolio</a></li>
@@ -29,6 +32,8 @@
         </div>
         </div>
     </header>
+    
+<!--    SLIDER   -->
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -45,6 +50,8 @@
             <button class="slider-btn">Learn More</button>
         </div>
     </div>
+        
+<!--    TEAM    -->
          
     <section class="team" id="team">
         <div class="container">
@@ -75,6 +82,8 @@
             </div>
         </div>
     </section>
+     
+<!--    SERVICE    -->
       
     <section class="prices" id="service">
         <div class="container">
@@ -94,7 +103,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td><button type="button" class="buy-now-btn" id="basic-package">Buy now</button></td>
+                            <td><button type="button" class="buy-now-btn">Buy now</button></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -116,7 +125,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td><button type="button" class="buy-now-btn" id="pro-package">Buy now</button></td>
+                            <td><button type="button" class="buy-now-btn">Buy now</button></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -138,17 +147,20 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td><button type="button" class="buy-now-btn" id="premium-package">Buy now</button></td>
+                            <td><button type="button" class="buy-now-btn">Buy now</button></td>
                         </tr>
                     </tfoot>
                 </table>
                 </div>
         </div>
     </section>       
+    
+<!--    FOOTER / CONTACTS    -->
   
       <footer id="contact">
           <div class="container">
               <h1>Contact us</h1>
+              <div class="footer-main">
               <div class="col-2">
                   <h2>Get in touch with us</h2>
                   <p class="footer-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
@@ -180,8 +192,9 @@
 <!--                        <span class="help-block"></span>-->
                       </div>
 
-                    <button type="submit" class="footer-btn">SEND</button>
+                    <button type="submit" class="btn-turquoise">SEND</button>
                 </form>
+              </div>
               </div>
           </div>
       </footer>
