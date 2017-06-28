@@ -176,19 +176,20 @@
                   </div>
               </div>
               <div class="col-2">
-                  <form action="" method="post" role="form" novalidate>
+                  <form action="" method="post" id="form1" role="form" novalidate>
+                     <div class='error-message'></div>
                       <div class="row">
                        <div class="col-2">
-                        <input type="text" class="footer-form" placeholder="Name" required>
+                        <input type="text" name="user-name" class="footer-form" placeholder="Name" required>
 <!--                        <span class="help-block"></span>-->
                        </div>
                        <div class="col-2">
-                        <input type="email" class="footer-form" placeholder="Email" required>
+                        <input type="email" name="user-email" class="footer-form" placeholder="Email" required>
 <!--                        <span class="help-block"></span>-->
                       </div>
                       </div>
                        <div class="col-1">
-                        <textarea class="footer-form" rows="8" placeholder="Message" required></textarea>
+                        <textarea name="user-message" class="footer-form" rows="8" placeholder="Message" required></textarea>
 <!--                        <span class="help-block"></span>-->
                       </div>
 
