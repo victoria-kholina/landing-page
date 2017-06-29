@@ -66,10 +66,6 @@ header
     right: 0
     z-index: 10
     border-bottom: 1px solid #fff
- 
-.btn-turquoise 
-    background: $turquoise
-    border: 1px solid $turquoise  
     
 .logo
     font-family: Lobster
@@ -117,6 +113,10 @@ header
     
 .visible
     display: block
+    
+.btn-turquoise 
+    background: $turquoise
+    border: 1px solid $turquoise  
     
 header .btn-turquoise 
     padding: 10px 15px
@@ -195,10 +195,10 @@ button
     border-radius: 5px
     cursor: pointer
     
-button:focus, .footer-form:focus 
-  outline: 0
-  -webkit-box-shadow: none
-          box-shadow: none
+button:focus, .form-field:focus 
+    outline: 0
+    -webkit-box-shadow: none
+    box-shadow: none
     
 //    TEAM 
 
@@ -232,31 +232,35 @@ button:focus, .footer-form:focus
 .col-3 table
     width: 100%
     border: none
-    thead 
-        tr:first-child
-            background: #485460
-            line-height: 80px
-        tr:last-child
-            background: #f8f9fb
-            line-height: 65px
-            border-bottom: 1px solid #f1f1f1 
-        h1
-            color: #fff
-            font-size: 26px
-        h2
-            font-size: 20px
-    tbody
-        tr
-            background: #fff
-            line-height: 45px
-            color: #8c9299
-            border-bottom: 1px solid #f1f1f1
-    tfoot
-        tr
-            background: #f8f9fb
-            line-height: 100px
-            color: #8c9299
-            border-bottom: 1px solid #f1f1f1 
+    
+thead 
+    tr:first-child
+        background: #485460
+        line-height: 80px
+    tr:last-child
+        background: #f8f9fb
+        line-height: 65px
+        border-bottom: 1px solid #f1f1f1 
+    h1
+        color: #fff
+        font-size: 26px
+    h2
+        font-size: 20px
+        
+tbody
+    tr
+        background: #fff
+        line-height: 45px
+        color: #8c9299
+        border-bottom: 1px solid #f1f1f1
+        
+tfoot
+    tr
+        background: #f8f9fb
+        line-height: 100px
+        color: #8c9299
+        border-bottom: 1px solid #f1f1f1 
+        
             
 .buy-now-btn
     background: #788492
@@ -294,13 +298,13 @@ textarea
     margin: 30px 0
     resize: none; 
     
-.footer-form 
+.form-field 
     padding: 15px 20px
     border: none
     border-radius: 4px
     font-size: 16px
     
-.footer-form 
+.form-field 
   &::-webkit-input-placeholder 
     @include placeholder
   
@@ -310,7 +314,13 @@ textarea
   &:-ms-input-placeholder 
     @include placeholder
     
- 
+.error-message 
+    position: relative;
+    height: 10px
+    bottom: 15px
+    font-size: 0.8em
+    text-align: left
+    
 .footer-desc
     padding: 15px 20% 15px 0
     color: #8c9299

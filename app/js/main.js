@@ -59,20 +59,20 @@ jQuery(document).ready(function(){
     
         //FORM VALIDATION
     
-    function showErrorMessage(input, textErr){
-        var errMessage = input.parents("form").find(".error-message");
-            errMessage.text(textErr).css({"margin-bottom": "10px", "font-size": "0.8em", "text-align": "left"});
+    function showErrorMessage(entryField, textErr){
+        var errMessage = entryField.parents("form").find(".error-message");
+            errMessage.text(textErr);
             errMessage.animate({'paddingLeft':'10px'},400).animate({'paddingLeft':'5px'},400); 
     }
 	
-    function hideErrorMessage(inpt){
-        if(inpt.hasClass("error")){
-            inpt.removeClass('error'); 
-            inpt.parents("form").find(".error-message").empty();
+    function hideErrorMessage(entryField){
+        if(entryField.hasClass("error")){
+            entryField.removeClass('error'); 
+            entryField.parents("form").find(".error-message").empty();
         }	
     }
     
-    $('.footer-form').unbind().blur( function(){
+    $('.form-field').unbind().blur( function(){
         var name = $(this).attr('name');
         var value = $(this).val();
               
@@ -105,7 +105,7 @@ jQuery(document).ready(function(){
                 
                         if(value == "") {
                                 $(this).removeClass('not-error').addClass('error');
-                                showErrorMessage($(this), "*Not all fields are filled");
+                                showErrorMessage($(this), "*All fields are required. Please, fill in all the fields");
                         } else {
                              $(this).addClass('not-error');
                             hideErrorMessage($(this));
@@ -118,22 +118,22 @@ jQuery(document).ready(function(){
     
     //FORM SUBMIT 
       
-    $('#form1').submit(function () { 
-        var entryField = $(this).find(".footer-form");
+    $('#footer-form').submit(function () { 
+        var entryField = $(this).find(".form-field");
         
         entryField.each(function () {
             if ($(this).val() == "") {
                 $(this).removeClass('not-error').addClass('error');
                 $(this).trigger("focus");
-                showErrorMessage($(this), "*Not all fields are filled");
+                showErrorMessage($(this), "*All fields are required. Please, fill in all the fields");
             }
         });
         
         if(entryField.hasClass("error")){ 
                 $(".error").trigger("focus");
-                showErrorMessage($(this), "*Not all fields are filled");
+                showErrorMessage($(this), "*All fields are required. Please, fill in all the fields");
             } else {
-                alert("OK");
+                alert("Your message has been sent.");
             }
         
     return false;
