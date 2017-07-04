@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/swiper.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/jquery-3.2.0.min.js"></script>
         <script src="js/swiper.jquery.min.js"></script>
@@ -18,7 +18,7 @@
    
     <header>
        <div class="container">
-        <div class="logo col-2"><h1>Author</h1></div>
+        <div class="logo col-2"><a href="#">Author</a></div>
         <div class="menu col-2">
             <div class="mobile-menu hidden"><button class="btn-turquoise"><span class="closed">MENU</span></button></div>
            <ul class="main-menu horizontal-menu">
@@ -37,8 +37,8 @@
 
     <div class="swiper-container">
         <div class="swiper-wrapper">
-           <div class="swiper-slide"><img src="img/slide1.jpg" alt="" />slide 1</div>
-            <div class="swiper-slide"><img src="img/slide1.jpg" alt="" />slide 2</div>
+           <div class="swiper-slide"><img src="img/slide1.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/slide1.jpg" alt="" /></div>
         </div>
 
         <div class="swiper-button-prev"></div>
@@ -55,28 +55,28 @@
          
     <section class="team" id="team">
         <div class="container">
-            <h1>The Team</h1>
+            <h2>The Team</h2>
             <div class="col-4">
-                <img src="img/team.jpg" alt="">
-                <h2>Adrian Thomas</h2>
+                <div class="team-img"><img src="img/team.jpg" alt="Adrian Thomas"><span class="plus">+</span></div>
+                <h3>Adrian Thomas</h3>
                 <h4>CEO & Founder</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
             </div>
             <div class="col-4">
-                <img src="img/team.jpg" alt="">
-                <h2>Narate Ketram</h2>
+                <div class="team-img"><img src="img/team.jpg" alt="Narate Ketram"><span class="plus">+</span></div>
+                <h3>Narate Ketram</h3>
                 <h4>Creative Director</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
             </div>
             <div class="col-4">
-                <img src="img/team.jpg" alt="">
-                <h2>Fernando Comet</h2>
+                <div class="team-img"><img src="img/team.jpg" alt="Fernando Comet"><span class="plus">+</span></div>
+                <h3>Fernando Comet</h3>
                 <h4>CEO & Founder</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
             </div>
             <div class="col-4">
-                <img src="img/team.jpg" alt="">
-                <h2>Adedayo saheed</h2>
+                <div class="team-img"><img src="img/team.jpg" alt="Adedayo saheed"><span class="plus">+</span></div>
+                <h3>Adedayo saheed</h3>
                 <h4>Creative Director</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
             </div>
@@ -90,8 +90,8 @@
             <div class="col-3">
                 <table>
                     <thead>
-                        <tr><td><h1>Basic</h1></td></tr>
-                        <tr><td><h2>$5.01/ Month</h2></td></tr>
+                        <tr><td><h2>Basic</h2></td></tr>
+                        <tr><td><h3>$5.01/ Month</h3></td></tr>
                     </thead>
                     <tbody>
                         <tr><td>Lorem ipsum </td></tr>
@@ -112,8 +112,8 @@
             <div class="col-3">
                <table>
                     <thead>
-                        <tr><td><h1>Pro</h1></td></tr>
-                        <tr><td><h2>$10.01/ Month</h2></td></tr>
+                        <tr><td><h2>Pro</h2></td></tr>
+                        <tr><td><h3>$10.01/ Month</h3></td></tr>
                     </thead>
                     <tbody>
                         <tr><td>Lorem ipsum </td></tr>
@@ -134,8 +134,8 @@
             <div class="col-3">
                <table>
                     <thead>
-                        <tr><td><h1>Premium</h1></td></tr>
-                        <tr><td><h2>$20.01/ Month</h2></td></tr>
+                        <tr><td><h2>Premium</h2></td></tr>
+                        <tr><td><h3>$20.01/ Month</h3></td></tr>
                     </thead>
                     <tbody>
                         <tr><td>Lorem ipsum </td></tr>
@@ -159,10 +159,10 @@
   
       <footer id="contact">
           <div class="container">
-              <h1>Contact us</h1>
+              <h2>Contact us</h2>
               <div class="footer-main">
               <div class="col-2">
-                  <h2>Get in touch with us</h2>
+                  <h3>Get in touch with us</h3>
                   <p class="footer-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
                   <div class="social-icons">
                       <a href="http://www.facebook.com/" target="_blank"><span class="icon icon-fb"></span></a>
@@ -176,7 +176,7 @@
                   </div>
               </div>
               <div class="col-2">
-                  <form action="" method="post" id="footer-form" role="form" novalidate>
+                  <form method="post" id="footer-form" novalidate>
                      <div class="error-message"></div>
                       <div class="row">
                        <div class="col-2">
@@ -190,7 +190,7 @@
                         <textarea name="user-message" class="form-field" rows="8" placeholder="Message" required></textarea>
                       </div>
 
-                    <button type="submit" class="btn-turquoise">SEND</button>
+                    <button type="submit" class="btn-turquoise">Send</button>
                 </form>
               </div>
               </div>

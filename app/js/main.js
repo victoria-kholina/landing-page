@@ -4,7 +4,8 @@ jQuery(document).ready(function(){
     getDropdown();  
     
     var mySwiper = new Swiper ('.swiper-container', {
-        loop: false,
+        zoom: true,
+        zoomMax: 5,
       pagination: '.swiper-pagination',
       paginationClickable: true,
     

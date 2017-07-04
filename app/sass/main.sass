@@ -17,6 +17,13 @@ body
     font-family: 'Open Sans', sans-serif
     color: $text-color
     
+a 
+    color: $turquoise
+    text-decoration: none
+    &:hover, &:active, &:visited
+    text-decoration: none
+    color: $turquoise
+    
 p, h4 
     font-size: 14px
     line-height: 1.5
@@ -70,7 +77,6 @@ header
 .logo
     font-family: Lobster
     font-size: 43px
-    color: $turquoise
     
 //    MENU
     
@@ -174,6 +180,7 @@ header .btn-turquoise
         font:
             size: 63px
             weight: 600
+        text-shadow: -0.5px 0.5px 0.5px $text-color
             
     h3
         font:
@@ -202,9 +209,9 @@ button:focus, .form-field:focus
     
 //    TEAM 
 
-.team h1, footer h1
+.team h2, footer h2
     font-size: 42px
-    margin-bottom: 100px
+    margin-bottom: 95px
     
 .team, .prices, footer
     padding: 95px 0
@@ -213,21 +220,44 @@ button:focus, .form-field:focus
 .team
     img
         border-radius: 50%
-        margin: 30px 0 60px 0
-        width: 90%
+        width: 205px
         
-    h2
+    h3
         font-size: 22px
     
     p
         margin-top: 25px
         padding: 0 20px
-        
+ 
+.team-img
+    position: relative
+    margin: 30px 40px 60px
+    
+.plus
+    display: none
+    position: absolute
+    width: 120px
+    height: 120px
+    top: 50%
+    left: 50%
+    margin-left: -60px
+    margin-top: -60px
+    z-index: 5
+    font-size: 85px
+    font-weight: 800
+    color: #f46d6d
+    
+
+.team-img:hover .plus
+    display: block
         
 //    SERVICES / PRICES
 
 .prices
     background: #f1f1f1
+    
+.prices .container
+    margin-top: 40px
     
 .col-3 table
     width: 100%
@@ -241,10 +271,10 @@ thead
         background: #f8f9fb
         line-height: 65px
         border-bottom: 1px solid #f1f1f1 
-    h1
+    h2
         color: #fff
         font-size: 26px
-    h2
+    h3
         font-size: 20px
         
 tbody
@@ -282,20 +312,18 @@ footer
         text-align: left
     .col-2:last-child 
         text-align: right
-    h2
+    h3
         font-size: 24px
-    form
-        margin-left: 15px
     
 footer .btn-turquoise
-    padding: 10px 50px
-    font-size: 16px
+    padding: 10px 60px
+    font-size: 22px
     
 textarea,input
     width: 100%
 
 textarea
-    margin: 30px 0
+    margin: 25px 0
     resize: none; 
     
 .form-field 
@@ -322,7 +350,7 @@ textarea
     text-align: left
     
 .footer-desc
-    padding: 15px 20% 15px 0
+    padding: 10px 20% 10px 0
     color: #8c9299
     
 .contacts
@@ -366,7 +394,7 @@ textarea
     .container
         width: 100%
         
-    .logo h1
+    .logo
         margin-left: 20px
         
     .footer-main
@@ -420,13 +448,17 @@ textarea
         button
             font-size: 18px
             margin: 20px 0
+        
+@media only screen and (max-width: 960px)
+    .team-img
+        margin: 20px
+        
+    .team img
+        width: 90%
 
 @media only screen and (max-width: 768px)   
     .col-4
         width: 50%
-        
-    .team img
-        width: 70%
         
     .col-3
         margin: 10px
@@ -437,8 +469,11 @@ textarea
     .team, .prices, footer
         padding: 50px 0
         
-    .team h1, footer h1
+    .team h2, footer h2
         margin-bottom: 50px
+        
+    .team img
+        width: 70%
      
 @media only screen and (max-width: 560px) 
     .text-slider
@@ -466,8 +501,16 @@ textarea
     .footer-desc, .social-icons
         padding: 15px 0
         
-    .team h1, footer h1
+    .team h2, footer h2
         margin-bottom: 20px
+        
+            
+    header 
+        .col-2:first-child
+            width: 45%
+            
+        .col-2:last-child
+            width: 45%
     
 @media only screen and (max-width: 375px) 
     .col-4
@@ -476,4 +519,5 @@ textarea
         
     .team img
         margin: 20px 0
+
             

@@ -10,6 +10,13 @@ body {
     color: #4e525d;
 }
 
+a {
+    color: #44c0c2;
+    text-decoration: none;
+    text-decoration: none;
+    color: #44c0c2;
+}
+
 p, h4 {
     font-size: 14px;
     line-height: 1.5;
@@ -75,7 +82,6 @@ header {
 .logo {
     font-family: Lobster;
     font-size: 43px;
-    color: #44c0c2;
 }
 
 .menu {
@@ -199,6 +205,7 @@ header .btn-turquoise span {
 .text-slider h1 {
     font-size: 63px;
     font-weight: 600;
+    text-shadow: -0.5px 0.5px 0.5px #4e525d;
 }
 
 .text-slider h3 {
@@ -228,9 +235,9 @@ button:focus, .form-field:focus {
     box-shadow: none;
 }
 
-.team h1, footer h1 {
+.team h2, footer h2 {
     font-size: 42px;
-    margin-bottom: 100px;
+    margin-bottom: 95px;
 }
 
 .team, .prices, footer {
@@ -240,11 +247,10 @@ button:focus, .form-field:focus {
 
 .team img {
     border-radius: 50%;
-    margin: 30px 0 60px 0;
-    width: 90%;
+    width: 205px;
 }
 
-.team h2 {
+.team h3 {
     font-size: 22px;
 }
 
@@ -253,8 +259,36 @@ button:focus, .form-field:focus {
     padding: 0 20px;
 }
 
+.team-img {
+    position: relative;
+    margin: 30px 40px 60px;
+}
+
+.plus {
+    display: none;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    margin-left: -60px;
+    margin-top: -60px;
+    z-index: 5;
+    font-size: 85px;
+    font-weight: 800;
+    color: #f46d6d;
+}
+
+.team-img:hover .plus {
+    display: block;
+}
+
 .prices {
     background: #f1f1f1;
+}
+
+.prices .container {
+    margin-top: 40px;
 }
 
 .col-3 table {
@@ -273,12 +307,12 @@ thead tr:last-child {
     border-bottom: 1px solid #f1f1f1;
 }
 
-thead h1 {
+thead h2 {
     color: #fff;
     font-size: 26px;
 }
 
-thead h2 {
+thead h3 {
     font-size: 20px;
 }
 
@@ -322,17 +356,13 @@ footer .col-2:last-child {
     text-align: right;
 }
 
-footer h2 {
+footer h3 {
     font-size: 24px;
 }
 
-footer form {
-    margin-left: 15px;
-}
-
 footer .btn-turquoise {
-    padding: 10px 50px;
-    font-size: 16px;
+    padding: 10px 60px;
+    font-size: 22px;
 }
 
 textarea, input {
@@ -340,7 +370,7 @@ textarea, input {
 }
 
 textarea {
-    margin: 30px 0;
+    margin: 25px 0;
     resize: none;
 }
 
@@ -378,7 +408,7 @@ textarea {
 }
 
 .footer-desc {
-    padding: 15px 20% 15px 0;
+    padding: 10px 20% 10px 0;
     color: #8c9299;
 }
 
@@ -428,7 +458,7 @@ textarea {
         width: 100%;
     }
 
-    .logo h1 {
+    .logo {
         margin-left: 20px;
     }
 
@@ -499,13 +529,19 @@ textarea {
     }
 }
 
-@media only screen and (max-width: 768px) {
-    .col-4 {
-        width: 50%;
+@media only screen and (max-width: 960px) {
+    .team-img {
+        margin: 20px;
     }
 
     .team img {
-        width: 70%;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .col-4 {
+        width: 50%;
     }
 
     .col-3 {
@@ -520,8 +556,12 @@ textarea {
         padding: 50px 0;
     }
 
-    .team h1, footer h1 {
+    .team h2, footer h2 {
         margin-bottom: 50px;
+    }
+
+    .team img {
+        width: 70%;
     }
 }
 
@@ -558,8 +598,16 @@ textarea {
         padding: 15px 0;
     }
 
-    .team h1, footer h1 {
+    .team h2, footer h2 {
         margin-bottom: 20px;
+    }
+
+    header .col-2:first-child {
+        width: 45%;
+    }
+
+    header .col-2:last-child {
+        width: 45%;
     }
 }
 
