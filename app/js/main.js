@@ -6,12 +6,12 @@ jQuery(document).ready(function(){
     var mySwiper = new Swiper ('.swiper-container', {
         zoom: true,
         zoomMax: 5,
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-    
-      paginationBulletRender: function (swiper, index, className) {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+
+        paginationBulletRender: function (swiper, index, className) {
             return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
+        },
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         spaceBetween: 5
@@ -32,10 +32,18 @@ jQuery(document).ready(function(){
      );
     
     $(".main-menu li a").click(function () {
-        var elemClick = $(this).attr("href");  
-        var elemPos = $(elemClick).offset().top;
-        $("body,html").animate({scrollTop: elemPos }, 800);
-        return false;
+        var elemClick = $(this).attr("href");
+        $(".main-menu li a").removeClass("active").addClass("inactive");
+        $(this).removeClass("inactive").addClass("active");
+        if(elemClick == "#"){
+            $("body,html").animate({scrollTop: $("html").offset().top}, 800);
+            return false;
+        } else {
+            var elemPos = $(elemClick).offset().top;
+            $("body,html").animate({scrollTop: elemPos }, 800);
+            return false;
+        }
+        
       });
     
     function getDropdown(){

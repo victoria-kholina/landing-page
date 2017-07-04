@@ -21,8 +21,8 @@ a
     color: $turquoise
     text-decoration: none
     &:hover, &:active, &:visited
-    text-decoration: none
-    color: $turquoise
+        text-decoration: none
+        color: $turquoise
     
 p, h4 
     font-size: 14px
@@ -93,10 +93,16 @@ header
         padding: 0 20px
         
     .active, a:hover, a:active 
-            background: #f8f9fb
-            color: $turquoise
-            border-bottom: 2px solid $turquoise  
-    
+        background: #f8f9fb
+        color: $turquoise
+        border-bottom: 2px solid $turquoise  
+            
+    .inactive
+        background: none
+        color: $text-color
+        border-bottom: none
+            
+        
 .horizontal-menu 
     li
         display: inline-block
