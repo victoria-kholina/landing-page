@@ -13,8 +13,7 @@ var gulp = require('gulp'),
 
 gulp.task('html', function(){
   gulp.src('app/index.html')
-  .pipe(browserSync.reload({stream:true}))
-    .pipe(gulp.dest('dist')); 
+  .pipe(browserSync.reload({stream:true}));
 });
 
 // JavaScript //
@@ -48,10 +47,10 @@ gulp.task('sass', function(){
 });
 
 gulp.task('css', ['sass'], function() {
-    return gulp.src('app/css/main.css')
+    return gulp.src(['app/css/**/*.css', '!app/css/**/*.min.css'])
         .pipe(cssnano())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('app/css'));
+        .pipe(gulp.dest('dist/css'));
 });
 
 
@@ -84,7 +83,7 @@ gulp.task('watch', ['browser-sync', 'html', 'js', 'sass'], function() { // Monit
     gulp.watch('app/js/main.js', ['js']); 
 });
 
-gulp.task('build', ['html', 'js', 'scripts', 'img'], function() {
-    var buildCss = gulp.src('app/css/**/*')
+gulp.task('build', ['css', 'js', 'scripts', 'img'], function() {
+    var buildCss = gulp.src(['app/css/**/*.min.css','app/css/**/*.otf'])
         .pipe(gulp.dest('dist/css'));
 });
