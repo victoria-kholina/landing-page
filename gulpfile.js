@@ -1,89 +1,71 @@
-var gulp = require('gulp'), 
-    sass = require('gulp-sass'), // Preprocessor SASS
-    cssbeautify = require('gulp-cssbeautify'), // beautiful CSS 
-    browserSync = require('browser-sync'), // live files reloader
-    concat      = require('gulp-concat'), // to join files
-    uglify      = require('gulp-uglifyjs'), // Compress JS
-    cssnano     = require('gulp-cssnano'), // Minification CSS
-    rename      = require('gulp-rename'), // Rename files
-    imagemin    = require('gulp-imagemin'),
-    cache       = require('gulp-cache');
+'use strict';
 
-// HTML //
-
-gulp.task('html', function(){
-  gulp.src('app/index.html')
-  .pipe(browserSync.reload({stream:true}));
-});
-
-// JavaScript //
-
-gulp.task('js', function(){
-  gulp.src('app/js/main.js')
-      .pipe(browserSync.reload({stream:true}))
-      .pipe(uglify()) 
-      .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest('dist/js')); 
-});
-
-gulp.task('scripts', function() {
-    return gulp.src([ 
-        'app/js/jquery-3.2.0.min.js', 
-        'app/js/swiper.jquery.min.js' 
-        ])
-        .pipe(concat('libs.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
-});
-
-// SASS / CSS //
-
-gulp.task('sass', function(){
-    return gulp.src('app/sass/main.sass') 
-        .pipe(sass()) 
-        .pipe(cssbeautify())
-        .pipe(gulp.dest('app/css'))
-        .pipe(browserSync.reload({stream: true})) // live reload/updating CSS 
-});
-
-gulp.task('css', ['sass'], function() {
-    return gulp.src(['app/css/**/*.css', '!app/css/**/*.min.css'])
-        .pipe(cssnano())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist/css'));
-});
+const   gulp = require("gulp"),
+            sass = require("gulp-sass"),
+            postcss = require("gulp-postcss"),
+            autoprefixer = require("autoprefixer"),
+            cssnano = require("cssnano"),
+            sourcemaps = require("gulp-sourcemaps"),
+            concat = require("gulp-concat"),
+            rename= require("gulp-rename"),
+            browserSync = require("browser-sync").create(),
+            uglify = require('gulp-uglify'),
+            pipeline = require('readable-stream').pipeline;
 
 
-// Compress IMAGES
+let paths = {
+    styles: {
+        src: "app/sass/*.sass",
+        dest: "dist/css/"
+    },
+    scripts: {
+        src: "app/js/*.js",
+        dest: "dist/js/"
+    }
+};
 
-gulp.task('img', function() {
-    return gulp.src('app/img/**/*')
-        .pipe(cache(imagemin({  
-            interlaced: true,
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}]
-        })))
-        .pipe(gulp.dest('dist/img')); 
-});
-
-// BROWSER SYNC  //
-
-gulp.task('browser-sync', function() { 
-    browserSync({ 
-        server: { 
-            baseDir: 'app' 
-        },
-        notify: false // Disable Browser sync notifications
+function style() {
+    return gulp
+        .src(paths.styles.src)
+        // Initialize sourcemaps before compilation starts
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .on("error", sass.logError)
+        .pipe(concat('main.min.css'))
+        // Use postcss with autoprefixer and compress the compiled file using cssnano
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        // Now add/write the sourcemaps
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.styles.dest))
+        // Add browsersync stream pipe after compilation
+        .pipe(browserSync.stream());
+}
+function scripts() {
+    return gulp
+        .src(paths.scripts.src)
+            .pipe(concat('scripts.js'))
+            .pipe(gulp.dest(paths.scripts.dest))
+            .pipe(rename('scripts.min.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest(paths.scripts.dest));
+}
+function watch() {
+    browserSync.init({
+        proxy: "http://landing-page/dist",
+        host: 'landing-page',
+        open: "external",
+        notify: false,
+        browser: "chrome"
     });
-});
+    gulp.watch(paths.styles.src, style);
+    gulp.watch('index.html').on("change", browserSync.reload);
+}
+exports.style = style;
+exports.watch = watch;
+exports.scripts = scripts;
 
-gulp.task('watch', ['browser-sync', 'html', 'js', 'sass'], function() { // Monitoring files
-    gulp.watch('app/sass/**/*.sass', ['sass']); 
-    gulp.watch('app/index.html', ['html']);
-    gulp.watch('app/js/main.js', ['js']); 
-});
+let build = gulp.series(style, scripts, watch);
 
-gulp.task('build', ['css', 'js', 'scripts', 'img'], function() {
-    var buildCss = gulp.src(['app/css/**/*.min.css','app/css/**/*.otf'])
-        .pipe(gulp.dest('dist/css'));
-});
+gulp.task('build', build);
+
+gulp.task('default', build);

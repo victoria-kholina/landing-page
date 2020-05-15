@@ -1,6 +1,6 @@
 $text-color: #4e525d
 $turquoise: #44c0c2
-$image_dir: '../img/';
+$image_dir: '../img/'
  
 @mixin placeholder
     color: #c1c1c1
@@ -47,7 +47,7 @@ p, h4
     clear: both
     
 .col-2 
-    width: 48%
+    width: 50%
     &:last-child
         float: right
     
@@ -75,7 +75,7 @@ header
     border-bottom: 1px solid #fff
     
 .logo
-    font-family: Lobster
+    font-family: Lobster, sans-serif
     font-size: 43px
     
 //    MENU
@@ -150,13 +150,14 @@ header .btn-turquoise
 //    SLIDER
 
 .swiper-container, .prices, footer
-    width: 1440px
-    margin: 0 auto
+    width: 100%
     
 .swiper-container
     height: 565px
     margin-top: 100px
-    
+
+
+
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev
     background-image: url( $image_dir + 'right-arrow.png' ) 
     right: 30px
@@ -304,7 +305,7 @@ tfoot
     font:
         size: 17px
         weight: 600
-    border: 1px solid #788492;
+    border: 1px solid #788492
     &:hover 
         background: $turquoise
         border: 1px solid $turquoise
@@ -312,9 +313,11 @@ tfoot
 //    FOOTER
             
 footer 
-    background-image: url( $image_dir + 'footer.jpg' ) 
+    background-image: url( $image_dir + 'footer.jpg' )
+    background-size: cover
     color: #fff
-    .col-2 
+    .col-2
+        width: 48%
         text-align: left
     .col-2:last-child 
         text-align: right
@@ -330,7 +333,7 @@ textarea,input
 
 textarea
     margin: 25px 0
-    resize: none; 
+    resize: none
     
 .form-field 
     padding: 15px 20px
@@ -349,7 +352,7 @@ textarea
     @include placeholder
     
 .error-message 
-    position: relative;
+    position: relative
     height: 10px
     bottom: 15px
     font-size: 0.8em
@@ -385,12 +388,9 @@ textarea
     background-position: -116px -50px
     
 //    MEDIA QUERIES  
-    
- //just for IE9 - IE-10   
-@media screen and (min-width:0\0) 
-     .buy-now-btn, header .btn-turquoise
-        line-height: 20px;
-
+@media only screen and (min-width: 1460px)
+    .swiper-slide img
+        width: 100%
     
 @media only screen and (max-width: 1460px)
     .swiper-container, .prices, footer
@@ -500,8 +500,6 @@ textarea
     footer .col-2
         width: 100%
         margin: 20px 0
-        
-    footer .col-2
         text-align: center
         
     .footer-desc, .social-icons
