@@ -16,11 +16,11 @@ const   gulp = require("gulp"),
 let paths = {
     styles: {
         src: "app/sass/*.sass",
-        dest: "dist/css/"
+        dest: "docs/css/" //name "docs" needed for gitHub pages
     },
     scripts: {
         src: "app/js/*.js",
-        dest: "dist/js/"
+        dest: "docs/js/"
     }
 };
 
@@ -51,7 +51,7 @@ function scripts() {
 }
 function watch() {
     browserSync.init({
-        proxy: "http://landing-page/dist",
+        proxy: "http://landing-page/docs",
         host: 'landing-page',
         open: "external",
         notify: false,
